@@ -1,0 +1,38 @@
+name: Deploy todo-list-frontend-prod
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Clean
+      run: make ci-clean
+      shell: bash
+    - name: Install dependencies
+      run: make ci-mods
+      shell: bash
+    - name: Linting
+      run: make ci-lint
+      shell: bash
+    # - name: Test
+    #   run: make ci-test
+    #   shell: bash
+    - name: Build
+      run: make ci-prodbuild
