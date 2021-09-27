@@ -1,0 +1,18 @@
+{
+
+  // Preferred quote style to use for quick fixes: `single` quotes, `double` quotes, or `auto` infer quote type from existing imports. Requires using TypeScript 2.9 or newer in the workspace.
+  "typescript.preferences.quoteStyle": "single",
+
+  // Enable/disable implementations CodeLens. This CodeLens shows the implementers of an interface.
+  "typescript.implementationsCodeLens.enabled": true,
+
+  // Enable/disable navigation breadcrumbs
+  "breadcrumbs.enabled": true,
+
+  // When enabled, insert a final new line at the end of the file when saving it.
+  "files.insertFinalNewline": true,
+
+  // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
+  "files.trimFinalNewlines": true,
+
+}
