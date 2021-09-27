@@ -16,7 +16,7 @@ A movie discover application with [TMDB](https://www.themoviedb.org/) API.
 - Always use `Typescript` instead of vanilla Javascript
 - Use **RxJS** for all kinds of async operations
 - Never do any kind of `try...catch` statements
-- Avoid imperative programming as much as possible, try to use functional paradigm for data fetch, mapping, filtering, groping
+- Avoid imperative programming as much as possible, try to use functional paradigm for data fetch, mapping, filtering, grouping
 - Follow Single responsibility [guideline](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html)
 
 **Note:** Feel free to ask any query when you need
