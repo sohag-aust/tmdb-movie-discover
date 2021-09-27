@@ -10,13 +10,13 @@ ci-mods:
 	@npm i
 
 ci-test:
-	@ng test
+	@npm run test
 
 ci-lint:
-	@ng lint
+	@npm run lint
 
 ci-prodbuild:
-	@ng build --prod
+	@npm run build --prod
 
 # husky git-hooks commands
 pre-push-hook:
