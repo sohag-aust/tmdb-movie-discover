@@ -7,7 +7,7 @@ A movie discover application with [TMDB](https://www.themoviedb.org/) API.
 
 ## General guidelines
 
-- Complete the [requirements](https://github.com/ParthoShuvo/movie-discover-app/issues) **within 7 days** starting from 27 September, 2021.
+- Complete the [requirements](https://github.com/ParthoShuvo/movie-discover-app/issues) **within 7-9 days** starting from 27 September, 2021.
 - Last submission date is **05 October, 2021**. Create a merge request to `master` branch for submission
 - When pushing a commit add issue number before e.g. ``#1 Add config.json and load in app bootstrap``, here `#1` is the issue number
 - Add every angular `component, directive, pipe, service` with angular-cli
