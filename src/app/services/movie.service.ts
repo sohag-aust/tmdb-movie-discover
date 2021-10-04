@@ -43,7 +43,7 @@ export class MovieService {
   //   return this.http.get<any>(URL).pipe(map(res => res.results));
   // }
 
-  getMovieData(query) {
+  getMovieData(query): Observable<any> {
     const API_KEY = 'f7b023c8b7fcf1047125f5f68bf09490';
     const URL = `https://api.themoviedb.org/3/discover/movie?${query}&api_key=${API_KEY}`;
     return this.http.get<any>(URL).pipe(map(res => res.results));
