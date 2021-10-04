@@ -1,0 +1,8 @@
+<div class="container">
+    <div *ngFor="let person of personData; let i=index">
+        <div class="persons">
+            <h3>Person Name: {{person.name}}</h3>
+            <button class="btn" (click)="selectPerson(i)" > Person Details </button>
+        </div>
+      </div>
+</div>

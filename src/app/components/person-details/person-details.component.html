@@ -1,0 +1,13 @@
+<nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+    </ul>
+</nav>
+
+<div class="person-detail" *ngIf="personDetail">
+    <img src="{{baseImageUrl}}{{personDetail.profile_path}}" alt="image missing">
+    <h1>Name: {{personDetail.also_known_as[0]}}</h1>
+    <h3>Biography: {{personDetail.biography.substring(0,20)}}</h3>
+    <h2>Birthday: {{personDetail.birthday ? personDetail.birthday : 'Not mentioned'}}</h2>
+    <h2>Deathday: {{personDetail.deathday ? personDetail.deathday : 'Not mentioned'}}</h2>
+</div>
