@@ -12,11 +12,10 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   param: string;
-  filteredData:[] = [];
+  filteredData: [] = [];
 
   ngOnInit(): void {
-    console.log('... product component is initialized');
-    
+    // console.log('... product component is initialized');
     this.route.queryParams
       .subscribe(params => {
         this.param = params.query;
@@ -29,9 +28,6 @@ export class ProductComponent implements OnInit {
 
       this.filteredData = data.results;
 
-    })
+    });
   }
-
-  val: number = 1;
-
 }

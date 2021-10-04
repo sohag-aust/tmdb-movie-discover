@@ -16,15 +16,12 @@ export class ProductService {
 
   private products!: ProductData;
 
-  constructor(private http: HttpClient) { 
-    
+  constructor(private http: HttpClient){
   }
 
   getProductsData(): Observable<any> {
-
     const API_KEY = 'f7b023c8b7fcf1047125f5f68bf09490';
     const URL = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
-    
     return this.http.get<any>(URL);
   }
 
@@ -34,17 +31,15 @@ export class ProductService {
 
     console.log(queryParam);
     const filterQueryParam = queryParam.split(' ');
-    console.log('filtered .. ', filterQueryParam[0])
+    // console.log('filtered .. ', filterQueryParam[0]);
 
     const API_KEY = 'f7b023c8b7fcf1047125f5f68bf09490';
     const URL = `https://api.themoviedb.org/3/search/company?api_key=${API_KEY}&query=${filterQueryParam[0]}&page=1`;
-    
     return this.http.get<any>(URL);
   }
 
   errorHandler(error: HttpErrorResponse) {
-
     console.log('Error catched !!');
-    return throwError(error.message || "server error.");
+    return throwError(error.message || 'server error.');
   }
 }

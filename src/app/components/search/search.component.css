@@ -18,3 +18,7 @@ h1{
    width: 65%;
    margin: 20px auto 0 auto; 
 }
+
+.product-name {
+    cursor: pointer;
+}
