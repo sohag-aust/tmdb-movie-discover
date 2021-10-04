@@ -1,0 +1,8 @@
+<div class="container">
+    <div *ngFor="let movie of movieData; let i=index">
+        <div class="movies">
+            <h3>Movie Name: {{movie.name}}</h3>
+            <button class="btn" (click)="selectMovie(i)" > Movie Details </button>
+        </div>
+      </div>
+</div>
