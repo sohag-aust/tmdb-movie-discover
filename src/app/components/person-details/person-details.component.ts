@@ -19,11 +19,9 @@ export class PersonDetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe( paramMap => {
       this.pathVariable = paramMap.get('personId');
-      console.log(this.pathVariable);
     });
 
     this.personService.getPersonDetails(this.pathVariable).subscribe( (data) => {
-      console.log('== data : ', data);
       this.personDetail = data;
     });
   }

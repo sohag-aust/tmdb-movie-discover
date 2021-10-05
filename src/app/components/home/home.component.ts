@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.personData = this.getPersonData();
-    console.log('== person data : ', this.personData);
   }
 
   getPersonData(): any {
@@ -53,6 +52,4 @@ export class HomeComponent implements OnInit {
   selectPerson(index: any) {
     this.router.navigate(['/person-details', this.personData[index].id]);
   }
-
-
 }

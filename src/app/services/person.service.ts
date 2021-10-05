@@ -1,18 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MovieConfig } from '../model/AppConfigData';
+import { AppConfigService } from './app-config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
-  constructor(private http: HttpClient) { }
+  private movieConfig: MovieConfig;
+
+  constructor(private http: HttpClient, private appConfigService: AppConfigService) {
+    this.movieConfig = appConfigService.config.movie_api;
+  }
 
   getPersonDetails(personId: any): Observable<any> {
-
-    const API_KEY = 'f7b023c8b7fcf1047125f5f68bf09490';
-    const URL = `https://api.themoviedb.org/3/person/${personId}?api_key=${API_KEY}`;
+    const URL = `${this.movieConfig.url}/person/${personId}?api_key=${this.movieConfig.api_key}`;
     return this.http.get<any>(URL);
   }
 }
