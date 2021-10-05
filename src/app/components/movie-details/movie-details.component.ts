@@ -15,19 +15,12 @@ export class MovieDetailsComponent implements OnInit {
   movieDetail: any;
 
   ngOnInit(): void {
-    // console.log('hello i am initialized ..');
-
     this.route.paramMap.subscribe( paramMap => {
       this.pathVariable = paramMap.get('movieId');
-      console.log(this.pathVariable);
     });
 
-
     this.movieDetailsService.getMovieDetails(this.pathVariable).subscribe( (data) => {
-      console.log('== data : ', data);
       this.movieDetail = data;
     });
   }
-
-
 }

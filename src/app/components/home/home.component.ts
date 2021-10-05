@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieData = this.getMovieData();
-    console.log('movie data : ', this.movieData);
   }
 
   getMovieData(): any {

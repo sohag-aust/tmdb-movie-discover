@@ -1,26 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // httpClient Module
 import { HttpClientModule } from '@angular/common/http';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { HomeComponent } from './components/home/home.component';
+import { MovieDetailsService } from './services/movie-details.service';
+import { AppConfigService } from './services/app-config.service';
+
+const appConfigFactory = (appConfigService: AppConfigService) => {
+  return () => appConfigService.Init();
+};
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieDetailsComponent,
-    HomeComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appConfigFactory,
+      deps: [AppConfigService],
+      multi: true
+    },
+    MovieDetailsService,
+    AppConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
