@@ -15,7 +15,6 @@ export class ProductComponent implements OnInit {
   filteredData: [] = [];
 
   ngOnInit(): void {
-    // console.log('... product component is initialized');
     this.route.queryParams
       .subscribe(params => {
         this.param = params.query;
@@ -23,11 +22,7 @@ export class ProductComponent implements OnInit {
     );
 
     this.productService.getSearchedProduct(this.param).subscribe((data) => {
-      console.log('-- data in ProductComponent ..');
-      console.log(data);
-
       this.filteredData = data.results;
-
     });
   }
 }
