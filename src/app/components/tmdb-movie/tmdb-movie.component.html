@@ -1,30 +1,36 @@
+<nav>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+  </ul>
+</nav>
+
 <div class="container">
 
     <div *ngIf="filteredSortBy" class="chip">
       <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" alt="Person" width="96" height="96">
-      {{filteredSortBy}}
+        {{filteredSortBy}}
       <span class="closebtn" (click)="removeFilteredSortBy()">&times;</span>
     </div>
   
     <div *ngIf="filteredGenre['name']" class="chip">
       <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1156&q=80" alt="Person" width="96" height="96">
-      {{filteredGenre['name']}}
+        {{filteredGenre['name']}}
       <span class="closebtn" (click)="removeFilteredGenre()">&times;</span>
     </div>
   
     <div *ngIf="filteredCertificate" class="chip">
       <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Person" width="96" height="96">
-      {{filteredCertificate}}
+        {{filteredCertificate}}
       <span class="closebtn" (click)="removeCertificate()">&times;</span>
     </div>
   
     <br><br>
+
     <div class="card-container">
       
       <div class="dropdown-container">
   
         <div class="dropdown">
-      
           <div>
             <button class="dropbtn">Sort by</button>
             <div class="dropdown-content">
@@ -35,16 +41,10 @@
               </div>
             </div>
           </div>
-      
-          <div>
-            
-          </div>
-          
         </div>
   
   
         <div class="dropdown">
-  
           <div>
             <button class="dropbtn">Genre</button>
             <div class="dropdown-content">
@@ -55,16 +55,10 @@
               </div>
             </div>
           </div>
-      
-          <div>
-            
-          </div>
-        
         </div>
   
       
         <div class="dropdown">
-      
           <div>
             <button class="dropbtn">Certification</button>
             <div class="dropdown-content">
@@ -75,11 +69,6 @@
               </div>
             </div>
           </div>
-      
-          <div>
-            
-          </div>
-          
         </div>
       
       </div>
@@ -94,8 +83,8 @@
           </div>
         </div>
       </div>
+
     </div>
-    
-  
-  </div>
+
+</div>
   

@@ -30,19 +30,15 @@ export class TmdbMovieComponent implements OnInit {
 
     // dropdown - genre
     this.movieService.getGenres().subscribe((data) => {
-      console.log(data.genres);
       this.genres = data.genres;
     });
 
     // dropdown - certificate
     this.movieService.getCertification().subscribe((data) => {
-      console.log('certification: ', data.certifications);
       this.certifications = data.certifications;
-      console.log(typeof this.certifications);
 
       for (const certificate in this.certifications) {
         if (this.certifications.hasOwnProperty(certificate)) {
-          // console.log('== has certificate property key ==');
           this.certificateKeys.push(certificate);
         }
       }
@@ -50,7 +46,6 @@ export class TmdbMovieComponent implements OnInit {
 
     this.makeQueryParam();
   }
-
 
   makeQueryParam() {
     let query = '';
@@ -82,8 +77,6 @@ export class TmdbMovieComponent implements OnInit {
     if (!query) {
       query = 'sort_by=popularity.desc';
     }
-
-    console.log(`----->>>> my ultimate query : ${query}`);
 
     this.movieService.getMovieData(query)
     .pipe(take(1))
