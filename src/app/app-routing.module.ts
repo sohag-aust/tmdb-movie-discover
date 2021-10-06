@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { TmdbMovieComponent } from './components/tmdb-movie/tmdb-movie.component';
 import { ProductComponent } from './components/product/product.component';
 import { SearchComponent } from './components/search/search.component';
+import { ArtistsComponent } from './components/artists/artists.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'product', component: ProductComponent},
   {path: 'tmdb-movie', component: TmdbMovieComponent},
   {path: 'movie-details/:movieId', component: MovieDetailsComponent},
+  {path: 'artists', component: ArtistsComponent},
   {path: 'person-details/:personId', component: PersonDetailsComponent}
 ];
 
@@ -25,5 +27,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [
       HomeComponent, SearchComponent, ProductComponent, TmdbMovieComponent,
-      MovieDetailsComponent, PersonDetailsComponent
+      ArtistsComponent, MovieDetailsComponent, PersonDetailsComponent
 ];

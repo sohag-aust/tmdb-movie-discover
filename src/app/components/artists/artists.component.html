@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="container-box">
+    <div *ngFor="let artist of artistsData; let i=index">
+        <div class="persons">
+            <h3>Artist Name: {{artist.name}}</h3>
+            <button class="btn" (click)="selectArtist(i)" > Artist Details </button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <app-footer></app-footer> -->

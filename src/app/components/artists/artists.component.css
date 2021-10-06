@@ -1,0 +1,18 @@
+.container-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.persons{
+    background-color: rgb(141, 161, 156);
+    border: 1px solid rgb(183, 220, 20);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.btn{
+    cursor: pointer;
+    background-color: rgba(168, 252, 72, 0.63);
+}

@@ -29,7 +29,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    max-height: 500px;
+    max-height: 200px;
     overflow: scroll;
     overflow-x: hidden;
   }
@@ -99,16 +99,38 @@
   }
 
   .dropdown-container{
-    border: 2px solid red;
-    margin: 5px;
+    /* border: 2px solid red; */
+    margin: 20px;
     text-align: center;
+    background-color: rgb(235, 233, 233);
+    height: 1000px;
   }
+
+  .drop{
+    margin-top: 200px;
+  }
+
+  .btn-color{
+    background-color: darkgrey;
+    color: black;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .movie-details-btn{
+    background-color: rgb(65, 166, 225);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
   .movie-container{
-      border: 2px solid green;
-      margin: 5px;
+      /* border: 2px solid green; */
+      /* margin: 4px; */
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       justify-content: space-between;
+      /* height: 1500px; */
   }
 
   .card {
@@ -116,13 +138,16 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 300px;
-    height: 400px;
+    height: 440px;
     margin: 20px;
   }
 
   .card-container{
       display: grid;
       grid-template-columns: 1fr 3fr;
+      /* align-items: center; */
+      /* height: 200px; */
+      
   }
 
   /* On mouse-over, add a deeper shadow */

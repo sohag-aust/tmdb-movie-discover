@@ -1,6 +1,4 @@
-<h1>Search Product | Amazon</h1>
-
-<input type="text" autocomplete="off" name="search-box" class="search-box" placeholder="eg: squid game | foundation" (keyup)="sendData($event)">
+<input type="text" autocomplete="off" name="search-box" class="search-box" placeholder="search tv, show name" (keyup)="sendData($event)">
 
 <section class="search-results">
   <p *ngIf="productData.length < 1" > No Data Found </p>
@@ -9,7 +7,7 @@
 
     <hr *ngIf="i>0"/>
 
-    <div (click)="myClickFunction($event)">
+    <div class="my-product" (click)="myClickFunction($event)">
       <p class="product-name">{{product.title}}</p>
     </div>
     
