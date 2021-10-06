@@ -13,6 +13,10 @@ import { MovieService } from './services/movie.service';
 // httpClientModule
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ArtistsComponent } from './components/artists/artists.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.Init();
@@ -21,12 +25,16 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    ArtistsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     {

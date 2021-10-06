@@ -1,8 +1,4 @@
-<nav>
-  <ul class="nav nav-tabs">
-    <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-  </ul>
-</nav>
+<app-header></app-header>
 
 <div class="container">
 
@@ -30,41 +26,53 @@
       
       <div class="dropdown-container">
   
-        <div class="dropdown">
-          <div>
-            <button class="dropbtn">Sort by</button>
-            <div class="dropdown-content">
-              <div class="dropdown-list" *ngFor="let item of sortItems; let i=index">
-                <div class="genre-item" (click)="getFilteredSortBy(i)" >
-                  {{item}}
+        <div class="row drop">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary btn-color" id="dropdownBasic1" ngbDropdownToggle>Sort By</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="dropdown-content">
+                  <div class="dropdown-list" *ngFor="let item of sortItems; let i=index">
+                    <div class="genre-item" (click)="getFilteredSortBy(i)" >
+                      {{item}}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
-  
-        <div class="dropdown">
-          <div>
-            <button class="dropbtn">Genre</button>
-            <div class="dropdown-content">
-              <div class="dropdown-list" *ngFor="let genre of genres; let i=index">
-                <div class="genre-item" (click)="getFilteredGenre(i)" >
-                  {{genre.name}}
+
+
+        <div class="row drop">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary btn-color" id="dropdownBasic1" ngbDropdownToggle>Genre</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="dropdown-content">
+                  <div class="dropdown-list" *ngFor="let genre of genres; let i=index">
+                    <div class="genre-item" (click)="getFilteredGenre(i)" >
+                      {{genre.name}}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
-      
-        <div class="dropdown">
-          <div>
-            <button class="dropbtn">Certification</button>
-            <div class="dropdown-content">
-              <div class="dropdown-list" *ngFor="let certificateKey of certificateKeys; let i=index">
-                <div class="genre-item" (click)="getFilteredCertificate(i)" >
-                  {{certificateKey}}
+        
+
+        <div class="row drop">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary btn-color" id="dropdownBasic1" ngbDropdownToggle>Certification</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="dropdown-content">
+                  <div class="dropdown-list" *ngFor="let certificateKey of certificateKeys; let i=index">
+                    <div class="genre-item" (click)="getFilteredCertificate(i)" >
+                      {{certificateKey}}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,11 +83,12 @@
   
   
       <div class="movie-container">
-        <div *ngFor="let movie of movieList" class="card">
+        <div *ngFor="let movie of movieList; let i=index" class="card">
           <img class="image" src="{{baseImageUrl}}{{movie.poster_path}}" alt="Avatar missing" style="width:100%">
           <div class="container">
-            <h4><b>{{movie.title}}</b></h4>
-            <p>{{movie.overview.substring(0,100)}}</p>
+            <h4><b>{{movie.title.substring(0,10)}}</b></h4>
+            <p>{{movie.overview.substring(0,115)}}</p>
+            <button (click)="selectMovie(i)" type="button" class="btn btn-info movie-details-btn">Movie Details</button>
           </div>
         </div>
       </div>
@@ -87,4 +96,6 @@
     </div>
 
 </div>
+
+<app-footer></app-footer>
   

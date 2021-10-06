@@ -11,6 +11,8 @@ h1{
     padding: 10px 20px;
     max-width: 600px;
     width: 95%;
+    border-radius: 20px;
+    border: 1px solid white;
 }
 
 .search-results {
@@ -21,4 +23,12 @@ h1{
 
 .product-name {
     cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.my-product{
+    position:relative;
+    /* background-color: darkgray; */
+    /* overflow:hidden; */
 }

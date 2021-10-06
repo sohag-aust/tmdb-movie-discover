@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -9,7 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class TmdbMovieComponent implements OnInit {
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private router: Router) {
 
   }
 
@@ -113,5 +114,10 @@ export class TmdbMovieComponent implements OnInit {
   removeCertificate() {
     this.filteredCertificate = '';
     this.makeQueryParam();
+  }
+
+  selectMovie(index: any) {
+    console.log('== movie id: ', this.movieList[index].id);
+    this.router.navigate(['/movie-details', this.movieList[index].id]);
   }
 }

@@ -1,8 +1,4 @@
-<nav>
-    <ul class="nav nav-tabs">
-      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-    </ul>
-</nav>
+<app-header></app-header>
 
 <div class="person-detail" *ngIf="personDetail">
     <img src="{{baseImageUrl}}{{personDetail.profile_path}}" alt="image missing">
@@ -11,3 +7,6 @@
     <h2>Birthday: {{personDetail.birthday ? personDetail.birthday : 'Not mentioned'}}</h2>
     <h2>Deathday: {{personDetail.deathday ? personDetail.deathday : 'Not mentioned'}}</h2>
 </div>
+
+
+<!-- <app-footer></app-footer> -->

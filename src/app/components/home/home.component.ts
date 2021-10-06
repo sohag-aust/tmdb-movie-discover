@@ -13,42 +13,11 @@ export class HomeComponent implements OnInit {
   }
 
   movieData: any = [];
-  personData: any = [];
+  images: any = ['1542204165-65bf26472b9b', '1535016120720-40c646be5580', '1485846234645-a62644f84728'].map((n) => `https://images.unsplash.com/photo-${n}?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80`);
+  imgURL: any = 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80';
 
   ngOnInit(): void {
     this.movieData = this.getMovieData();
-    this.personData = this.getPersonData();
-  }
-
-  getPersonData(): any {
-    const data = [
-      {
-        id: 1,
-        name: 'George Walton'
-      },
-      {
-        id: 2,
-        name: 'Mark Hamil'
-      },
-      {
-        id: 7,
-        name: 'Andrew'
-      },
-      {
-        id: 4,
-        name: 'Carrie Frances'
-      },
-      {
-        id: 11,
-        name: 'Dave Reynolds'
-      },
-      {
-        id: 6,
-        name: 'Anthony Kingsley'
-      }
-    ];
-
-    return data;
   }
 
   getMovieData(): any {
@@ -80,10 +49,6 @@ export class HomeComponent implements OnInit {
     ];
 
     return data;
-  }
-
-  selectPerson(index: any) {
-    this.router.navigate(['/person-details', this.personData[index].id]);
   }
 
   selectMovie(index: any) {

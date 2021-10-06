@@ -13,6 +13,7 @@ export class MovieDetailsComponent implements OnInit {
 
   pathVariable: string;
   movieDetail: any;
+  baseImageUrl = 'https://image.tmdb.org/t/p/original';
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( paramMap => {
