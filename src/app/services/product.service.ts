@@ -20,7 +20,7 @@ export class ProductService {
   }
 
   getProductsData(): Observable<any> {
-    const URL = `${this.movieConfig.url}/trending/all/day?api_key=${this.movieConfig.api_key}`;
+    const URL = `${this.movieConfig.url}/trending/movie/day?api_key=${this.movieConfig.api_key}`;
     return this.http.get<any>(URL);
   }
 

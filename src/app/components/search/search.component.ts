@@ -26,8 +26,8 @@ export class SearchComponent implements OnInit {
     this.searchedData = [];
 
     this.searchedData = this.productData.filter( (product) => {
-      const name = 'name';
-      const s = product[name];
+      const title = 'title';
+      const s = product[title];
 
       if (s) {
         const substr = s.substring(0, query.length);

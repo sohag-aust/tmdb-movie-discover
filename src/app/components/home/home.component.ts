@@ -13,9 +13,42 @@ export class HomeComponent implements OnInit {
   }
 
   movieData: any = [];
+  personData: any = [];
 
   ngOnInit(): void {
     this.movieData = this.getMovieData();
+    this.personData = this.getPersonData();
+  }
+
+  getPersonData(): any {
+    const data = [
+      {
+        id: 1,
+        name: 'George Walton'
+      },
+      {
+        id: 2,
+        name: 'Mark Hamil'
+      },
+      {
+        id: 7,
+        name: 'Andrew'
+      },
+      {
+        id: 4,
+        name: 'Carrie Frances'
+      },
+      {
+        id: 11,
+        name: 'Dave Reynolds'
+      },
+      {
+        id: 6,
+        name: 'Anthony Kingsley'
+      }
+    ];
+
+    return data;
   }
 
   getMovieData(): any {
@@ -47,6 +80,10 @@ export class HomeComponent implements OnInit {
     ];
 
     return data;
+  }
+
+  selectPerson(index: any) {
+    this.router.navigate(['/person-details', this.personData[index].id]);
   }
 
   selectMovie(index: any) {
