@@ -9,7 +9,8 @@ import { AppConfigData } from '../model/AppConfigData';
 })
 export class AppConfigService {
 
-  private appConfigData!: AppConfigData;
+
+    private appConfigData!: AppConfigData;
 
     constructor(private http: HttpClient) {
 
