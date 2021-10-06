@@ -4,8 +4,10 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MovieService } from './services/movie.service';
+import { MovieDetailsService } from './services/movie-details.service';
 import { AppConfigService } from './services/app-config.service';
+
+import { MovieService } from './services/movie.service';
 
 // httpClientModule
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +34,7 @@ const appConfigFactory = (appConfigService: AppConfigService) => {
       deps: [AppConfigService],
       multi: true
     },
-
+    MovieDetailsService,
     MovieService,
     ProductService,
     AppConfigService

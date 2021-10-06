@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AppConfigData } from '../model/AppConfigData';
@@ -8,7 +9,6 @@ import { AppConfigData } from '../model/AppConfigData';
   providedIn: 'root'
 })
 export class AppConfigService {
-
 
     private appConfigData!: AppConfigData;
 
