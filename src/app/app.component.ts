@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movie-discover-app';
+  title = 'app';
+
+  constructor() {
+
+  }
 }
