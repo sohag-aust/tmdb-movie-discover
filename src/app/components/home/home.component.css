@@ -12,7 +12,21 @@
     text-align: center;
 }
 
+.movies{
+    background-color: rgb(61, 170, 143);
+    border: 1px solid rgb(183, 220, 20);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
 .btn{
     cursor: pointer;
     background-color: goldenrod;
+}
+
+.nav-item {
+    margin: 20px;
+    font-weight: 700;
+    font-size: 24px;
 }

@@ -1,0 +1,18 @@
+<h1>Search Product | Amazon</h1>
+
+<input type="text" autocomplete="off" name="search-box" class="search-box" placeholder="eg: squid game | foundation" (keyup)="sendData($event)">
+
+<section class="search-results">
+  <p *ngIf="productData.length < 1" > No Data Found </p>
+
+  <ng-template ngFor let-product [ngForOf]="searchedData" let-i="index">
+
+    <hr *ngIf="i>0"/>
+
+    <div (click)="myClickFunction($event)">
+      <p class="product-name">{{product.name}}</p>
+    </div>
+    
+  </ng-template>
+
+</section>

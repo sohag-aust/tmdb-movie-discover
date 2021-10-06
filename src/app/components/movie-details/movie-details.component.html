@@ -1,0 +1,11 @@
+<nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+    </ul>
+</nav>
+
+<div class="movie-container" *ngIf="movieDetail">
+    <h1>Title: {{movieDetail.title}}</h1>
+    <h3>Genre: {{movieDetail.genres[0].name}}</h3>
+    <h2>Rating: {{movieDetail.vote_average}}</h2>
+</div>

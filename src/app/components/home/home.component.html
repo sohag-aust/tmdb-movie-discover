@@ -1,4 +1,5 @@
 <div class="container">
+
     <div *ngFor="let person of personData; let i=index">
         <div class="persons">
             <h3>Person Name: {{person.name}}</h3>
@@ -6,3 +7,19 @@
         </div>
       </div>
 </div>
+
+    <div *ngFor="let movie of movieData; let i=index">
+        <div class="movies">
+            <h3>Movie Name: {{movie.name}}</h3>
+            <button class="btn" (click)="selectMovie(i)" > Movie Details </button>
+        </div>
+      </div>
+</div>
+
+<nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/tmdb-movie" [routerLinkActiveOptions]="{exact:true}">Go to TMDB site</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/search" [routerLinkActiveOptions]="{exact:true}">Go to Product site</a></li>
+    </ul>
+</nav>
+
