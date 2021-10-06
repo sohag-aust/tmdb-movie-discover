@@ -1,18 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// httpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { AppConfigService } from './services/app-config.service';
+import { ProductService } from './services/product.service';
+
+const appConfigFactory = (appConfigService: AppConfigService) => {
+  return () => appConfigService.Init();
+};
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appConfigFactory,
+      deps: [AppConfigService],
+      multi: true
+    },
+    ProductService,
+    AppConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

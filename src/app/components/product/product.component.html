@@ -1,0 +1,13 @@
+<nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+  <ng-template ngFor let-product [ngForOf]="filteredData" let-i="index">
+    <div class="design">
+      <p >{{product.name}}</p>
+    </div>
+  </ng-template>
+</div>

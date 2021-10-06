@@ -1,0 +1,6 @@
+{
+    "movie_api": {
+       "url": "https://api.themoviedb.org/3",
+       "api_key": "f7b023c8b7fcf1047125f5f68bf09490"
+    }
+}
