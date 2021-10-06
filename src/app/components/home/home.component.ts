@@ -12,8 +12,14 @@ export class HomeComponent implements OnInit {
 
   }
 
+  movieData: any = [];
   personData: any = [];
-  
+
+  ngOnInit(): void {
+    this.movieData = this.getMovieData();
+    this.personData = this.getPersonData();
+  }
+
   getPersonData(): any {
     const data = [
       {
@@ -40,12 +46,9 @@ export class HomeComponent implements OnInit {
         id: 6,
         name: 'Anthony Kingsley'
       }
+    ];
 
-  movieData: any = [];
-
-  ngOnInit(): void {
-    this.movieData = this.getMovieData();
-    this.personData = this.getPersonData();
+    return data;
   }
 
   getMovieData(): any {
