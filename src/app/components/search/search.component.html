@@ -1,4 +1,4 @@
-<input type="text" autocomplete="off" name="search-box" class="search-box" placeholder="search tv, show name" (keyup)="sendData($event)">
+<input type="text" autocomplete="off" name="search-box" class="search-box" placeholder="search tv, show name eg: the" (keyup)="sendData($event)">
 
 <section class="search-results">
   <p *ngIf="productData.length < 1" > No Data Found </p>
